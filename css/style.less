@@ -1,5 +1,6 @@
 body {
 	font-family: 'Quicksand', sans-serif;
+	background-color: #f0f0f0;
 }
 
 /*Header Styles*/
@@ -54,42 +55,101 @@ body {
 /*Results Section styles*/
 
 #resultsSection {
-	background-color: #11caca;
+	text-align: center;
+ 	.message {
+	      font-size: 2em;
+	      font-weight: bold;
+	      padding: 1em 0.5em;
+		  .custom-message {
+				color: #11caca;
+				text-shadow: 1px 1px #9E9E9E;
+			}
+	}
+	#photo-list {
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    flex-wrap: wrap;
+		    padding: 0;
+		.img-style {
+			width: 20em;
+			padding: 2em;
+			margin: 2em;
+			background-color: #fff;
+		}
+	}
+	.returnBtn {
+		width: 50%;
+		background: transparent;
+		border: none;
+		border-bottom: 1px solid #11caca;
+		color: #11caca;
+		cursor: pointer;
+		font-size: 2em;
+		padding: 0.5em 0;
+		transition: background 2s, color 2s;
+		outline: none;
+		
+		&:hover {
+			background: #11caca;
+			color: #fff;
+			outline: none;
+		}
+	}
 }
 /* Media Query Styles */
 
-@media (max-width: 1280px) {
-#searchSection {
-	margin: 0 0 3% 4%;
-}
-.title {
-	font-size: 5.2em !important;	
-}
-.about-style {
- 	font-size: 9em !important;
- 	margin: -10% 0 -5% 0;
- }
- #search-Box {
- 	width: 45vw;
-    font-size: 6em;
- }
+@media (min-width: 901px) and (max-width: 1280px) {
+	#searchSection {
+		margin: 0 0 3% 4%;
+	}
+	.title {
+		font-size: 5.2em !important;	
+	}
+	.about-style {
+	 	font-size: 9em !important;
+	 	margin: -10% 0 -5% 0;
+	 }
+	 #search-Box {
+	 	width: 45vw;
+	    font-size: 6em;
+	 }
+	 .message {
+	      font-size: 2em;
+	      font-weight: bold;
+	      padding: 1em 0.5em;
+		  .custom-message {
+				color: #11caca;
+				text-shadow: 1px 1px #9E9E9E;
+			}
+		}
+	.returnBtn {
+		width: 80%;
+	}
 }
 
-@media (max-width: 900px) {
-#searchSection {
-	margin: 0;
-}
-.title {
-	font-size: 4em !important;	
+@media (min-width: 0px) and (max-width: 900px) {
+	#searchSection {
+		margin: 0;
+	}
+	.title {
+		font-size: 4em !important;	
+	}
+	.about-style {
+	 	font-size: 8em !important;
+	 	display: block;
+	 }
+	 #search-Box {
+	 	width: 80vw;
+	    font-size: 5em;
+	 }
 
-}
-.about-style {
- 	font-size: 8em !important;
- 	display: block;
- 	// margin: -10% 0 -5% 0;
- }
- #search-Box {
- 	width: 80vw;
-    font-size: 5em;
- }
+	/* Results styles */
+	.message {
+	      font-size: 1.5em !important;
+	      padding: 1em 0.5em !important;
+		}
+	.returnBtn {
+		width: 100% !important;
+	}
 }

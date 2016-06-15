@@ -13,4 +13,9 @@ app.controller("MemoriesCtrl", function(){
 		}
 	};
 
+	vm.refreshSearch = function() {
+		vm.showResults = false;
+		vm.searchTerm = "";
+		vm.searchForm.$setPristine();
+	}
 });

@@ -18,13 +18,27 @@
 			<br><span class="logo-style">memories</span>
 			<form id="search-Form" name="vm.searchForm" ng-submit="vm.displayMemories()">
 				<label for="search-Box" class="about-style">about </label>
-				<input id="search-Box" name="searchbox" type="text" placeholder=" Pets..." required>
+				<input id="search-Box" name="searchbox" type="text" ng-model="vm.searchTerm" placeholder=" Pets..." required>
 				<button type="submit" name="searchButton" id="searchButton">Find</button>
 			</form>
 			</p>
 		</section>
 		<section ng-hide="!vm.showResults" id="resultsSection">
-			hello!
+		<button class="returnBtn" ng-click="vm.refreshSearch()">Refresh my Search</button>
+			<div class="message">We Found <span class="custom-message">20</span> memories of <span class="custom-message">{{ vm.searchTerm }}</span></div>
+			
+			<div id="results" class="container">
+				<ul id="photo-list" class="row">
+					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+				</ul>
+			</div>
 		</section>
 	
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
