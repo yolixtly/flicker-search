@@ -6,14 +6,17 @@ body {
 /*Header Styles*/
 .title {
 	font-size: 7em !important;
+	z-index: 10;
 }
 .logo-style {
    	color: #11caca;
    	font-weight: 700;
+   	z-index: 10;
    }
  .about-style {
  	font-size: 12em !important;
  	margin: -10% 0 -5% 0;
+ 	z-index: 10;
  }
  #searchSection {
  	margin: 5%;
@@ -25,6 +28,7 @@ body {
  	display: inline-block;
  	bottom:0;
  	left: 0;
+ 	z-index: 10;
  }
 
 #search-Box {
@@ -50,6 +54,31 @@ body {
 	font-weight: bolder;
 	background-color: #11caca;
 	color: #fff;
+	outline: none;
+	&:hover {
+		text-shadow: 0 0 4px black;
+	}
+}
+
+#error {
+	position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    background-color: rgba(17, 202, 202, 0.52);
+    padding: 2em;
+	width: 20em;
+	height: 20em;
+    text-align: center;
+    border-radius: 1em 2em 12em 0;
+    p {
+    text-align: justify;
+    font-weight: bolder;
+    font-size: 3em;
+    }
+    span {
+    	color: hotpink;
+    }
 }
 
 /*Results Section styles*/
@@ -123,6 +152,9 @@ body {
 				text-shadow: 1px 1px #9E9E9E;
 			}
 		}
+	#error {
+		top: -5em !important;
+	}
 	.returnBtn {
 		width: 80%;
 	}
@@ -144,6 +176,14 @@ body {
 	    font-size: 5em;
 	 }
 
+	#error {
+		top: 4em !important;
+		width: 15em;
+		height: 15em;
+		p {
+			font-size: 2em !important;
+		}
+	}
 	/* Results styles */
 	.message {
 	      font-size: 1.5em !important;
@@ -152,4 +192,5 @@ body {
 	.returnBtn {
 		width: 100% !important;
 	}
+
 }

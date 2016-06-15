@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Memories</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
-		<link rel="icon" href="images/favicon.png">
-		<link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-		<link href='https://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/style.css">
-		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-    	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
-	</head>
-	<body  ng-app="imgApp" ng-controller="MemoriesCtrl as vm">
-		<section ng-hide="vm.showResults" id="searchSection">
-			<p class="title"> Find me 
-			<br><span class="logo-style">memories</span>
-			<form id="search-Form" name="vm.searchForm" ng-submit="vm.displayMemories()">
-				<label for="search-Box" class="about-style">about </label>
-				<input id="search-Box" name="searchbox" type="text" ng-model="vm.searchTerm" placeholder=" Pets..." required>
-				<button type="submit" name="searchButton" id="searchButton">Find</button>
-			</form>
-			</p>
-		</section>
-		<section ng-hide="!vm.showResults" id="resultsSection">
-		<button class="returnBtn" ng-click="vm.refreshSearch()">Refresh my Search</button>
-			<div class="message">We Found <span class="custom-message">20</span> memories of <span class="custom-message">{{ vm.searchTerm }}</span></div>
-			
-			<div id="results" class="container">
-				<ul id="photo-list" class="row">
-					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-					<img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-				</ul>
-			</div>
-		</section>
-	
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="app/app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+    <link rel="icon" href="images/favicon.png">
+    <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+  </head>
+  <body  ng-app="imgApp" ng-controller="MemoriesCtrl as vm">
+    <section ng-hide="vm.showResults" id="searchSection">
+      <p class="title"> Find me
+        <br><span class="logo-style">memories</span>
+        <form id="search-Form" name="vm.searchForm" ng-submit="vm.displayMemories()" novalidate>
+          <label for="search-Box" class="about-style">about </label>
+          <input id="search-Box" name="searchbox" type="text" ng-model="vm.searchTerm" placeholder=" Pets..." required>
+          <button type="submit" name="searchButton" id="searchButton">Find</button>
+        </form>
+      </p>
+      <div id="validation" ng-messages="vm.searchForm.searchBox.$error" ng-if="vm.searchForm.$submitted">
+        <div id="error">
+          <p ng-message="required">
+            CATS <br>
+            PARIS <br>
+            <span>AngularJS</span>
+          </p>
+        </div>
+        
+      </div>
+    </section>
+    <section ng-hide="!vm.showResults" id="resultsSection">
+      <button class="returnBtn" ng-click="vm.refreshSearch()">Refresh my Search</button>
+      <div class="message">We Found <span class="custom-message">20</span> memories of <span class="custom-message">{{ vm.searchTerm }}</span></div>
+      
+      <div id="results" class="container">
+        <ul id="photo-list" class="row">
+          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
+        </ul>
+      </div>
+    </section>
+    
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="app/app.js"></script>
+  </body>
 </html>
