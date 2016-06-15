@@ -1,0 +1,24 @@
+{
+  "name": "flicker-searcher",
+  "authors": [
+    "yolixtly <yolixtly_13@hotmail.com>"
+  ],
+  "description": "Angular project using REST API",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "less": "^2.7.1",
+    "angular": "^1.5.6",
+    "angular-animate": "^1.5.6",
+    "jquery": "^3.0.0"
+  }
+}
