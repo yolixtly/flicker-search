@@ -19,13 +19,13 @@
         <span class="logo-style">memories</span>
         <form id="search-Form" name="vm.searchForm" ng-submit="vm.displayMemories()" novalidate>
           <label for="search-Box" class="about-style">about </label>
-          <input id="search-Box" name="searchbox" type="text" ng-model="vm.searchTerm" placeholder=" Pets..." required />
+          <input id="search-Box" name="searchbox" type="text" ng-chage="vm.validationBox()" ng-model="vm.searchTerm" placeholder=" Pets..." required />
           <button type="submit" name="searchButton" id="searchButton">
           Find
           </button>
         </form>
       </p>
-      <div id="validation" ng-messages="vm.searchForm.searchBox.$error" ng-if="vm.searchForm.$submitted">
+      <div id="validation" ng-messages="vm.searchForm.searchBox.$error" ng-if="(vm.searchForm.$submitted || vm.searchForm.searchbox.$dirty) && !vm.searchForm.searchbox.$valid ">
         <div id="error">
           <p ng-message="required">
             CATS <br>
@@ -37,7 +37,11 @@
     </section>
     <section ng-hide="!vm.showResults" id="resultsSection">
       <button class="returnBtn" ng-click="vm.refreshSearch()">Refresh my Search</button>
-      <div class="message">
+           <div class="message" ng-if="vm.loadingMsg">
+        We are loading your memories
+      </div>
+
+      <div class="message" ng-if="!vm.loadingMsg">
         We Found
         <span class="custom-message">{{ vm.photosTotal }}</span>
         memories of
@@ -50,7 +54,8 @@
       <div id="results" class="container">
         <div id="photo-list" class="row" ng-repeat="photo in vm.photos">
           
-            <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{ photo.server }}/{{ photo.id }}_{{ photo.secret }}.jpg" alt="flcker image" class="img-style col-xs-12 col-md-4">
+            <div style="background-image: url(https://farm{{photo.farm}}.staticflickr.com/{{ photo.server }}/{{ photo.id }}_{{ photo.secret }}.jpg)" class="img-style col-xs-12 col-md-4">
+            </div>
          
         </div>
       </div>

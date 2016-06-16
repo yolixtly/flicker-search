@@ -95,13 +95,16 @@ body {
 			}
 	}
 	#photo-list {
-		    display: flex;
-		    justify-content: center;
-		    align-items: center;
-		    flex-wrap: wrap;
+		    // display: flex;
+		    // justify-content: center;
+		    // align-items: center;
+		    // flex-wrap: wrap;
+		    display: inline-block; 
 		    padding: 0;
 		.img-style {
 			width: 20em;
+			height: 20em;
+    		background-size: cover;
 			padding: 2em;
 			margin: 2em;
 			background-color: #fff;
@@ -126,6 +129,22 @@ body {
 			outline: none;
 		}
 	}
+}
+
+/* Animations */
+
+#searchSection.ng-hide-add {
+	transition: 2s ease-out all;
+}
+#searchSection.ng-hide {
+	opacity: 0;
+}
+#resultsSection.ng-hide-remove {
+	transition: 2s ease-in all;
+	opacity: 0;
+}
+#resultsSection.ng-hide-remove-active {
+	opacity: 1;
 }
 /* Media Query Styles */
 

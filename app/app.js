@@ -39,6 +39,7 @@ app.controller("MemoriesCtrl",['$http', '$q', function($http, $q){
   vm.refreshSearch = function() {
     vm.showResults = false;
     vm.searchTerm = "";
+    vm.photos = "";
     vm.searchForm.$setPristine();
   };
 
@@ -53,6 +54,8 @@ app.controller("MemoriesCtrl",['$http', '$q', function($http, $q){
       nojsoncallback : 1
     };
 
+    vm.loadingMsg = true;
+
     $http({
         url: url,
         params: params,
@@ -61,7 +64,7 @@ app.controller("MemoriesCtrl",['$http', '$q', function($http, $q){
           console.log("getFlickerData Success!");
           console.log(response);
           vm.photosTotal = response.data.photos.total;
-          
+          vm.loadingMsg = false;
           vm.photos = response.data.photos.photo;
           
     },function(response){
@@ -71,6 +74,14 @@ app.controller("MemoriesCtrl",['$http', '$q', function($http, $q){
     });
    };
 
+   vm.validationBox = function(){
+    console.log("hi");
+      if(vm.searchTerm === ""){
+        vm.showValidation = true;
+      } else {
+       vm.showValidation = false;
+     }
+   };
 
    //creating $q promise to select all the Relevant data and place it as an image in the UI
 
@@ -91,6 +102,7 @@ app.controller("MemoriesCtrl",['$http', '$q', function($http, $q){
       //         }
       //   });
       // };
+
 
         
   
