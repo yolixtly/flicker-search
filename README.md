@@ -16,8 +16,13 @@ Bugs and Achievements:
 - The animations are very basic, and is a topic I want to master, I want my users to love the experience in each app I create. 
 
 Desktop View: 
-<img src="images/landing-page.png">
-<img src="images/results.png">
+<br>
+<img src="images/landing-page.png" style="width: 70%">
+<br>
+<img src="images/results.png" style="width: 70%">
+<br>
 Mobile Landing Page: 
+<br>
 <img src="images/mobile-landing.png">
+<br>
 <img src="images/results-mobile.png">
