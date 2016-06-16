@@ -97,15 +97,15 @@ form {
 }
 #resultsSection #photo-list {
   display: inline-block;
-  padding: 0;
+  padding: 1.5em;
+  margin: 1em;
+  background-color: rgba(17, 202, 202, 0.07);
 }
 #resultsSection #photo-list .img-style {
-  width: 20em;
-  height: 20em;
+  border-radius: 1.5em;
+  width: 17em;
+  height: 17em;
   background-size: cover;
-  padding: 2em;
-  margin: 2em;
-  background-color: #fff;
   list-style: none;
 }
 #resultsSection .returnBtn {
@@ -124,6 +124,10 @@ form {
   background: #11caca;
   color: #fff;
   outline: none;
+}
+.hoverRefresh {
+  background: #11caca;
+  color: #fff;
 }
 /* Animations */
 #searchSection.ng-hide-add {
@@ -179,12 +183,12 @@ form {
     font-size: 4em !important;
   }
   .about-style {
-    font-size: 8em !important;
+    font-size: 7em !important;
     display: block;
   }
   #search-Box {
-    width: 80vw;
-    font-size: 5em;
+    width: 75vw;
+    font-size: 4em;
   }
   #error {
     top: 4em !important;
