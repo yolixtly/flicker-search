@@ -5,7 +5,7 @@ app.config(function($httpProvider){
    $httpProvider.defaults.useXDomain = true;
 });
 
-app.controller("MemoriesCtrl",['$http', '$q', function($http, $q){
+app.controller('MemoriesCtrl',['$http', '$q', function($http, $q){
 
   var vm = this;
 
@@ -25,8 +25,6 @@ app.controller("MemoriesCtrl",['$http', '$q', function($http, $q){
       //Renders the results section, hides the search section
       vm.showResults = true;
 
-
-
       //Makes the REST API Request and brings with it all the goodies!
       getFlickerData();
     }
@@ -34,8 +32,8 @@ app.controller("MemoriesCtrl",['$http', '$q', function($http, $q){
 
   vm.refreshSearch = function() {
     vm.showResults = false;
-    vm.searchTerm = "";
-    vm.photos = "";
+    vm.searchTerm = '';
+    vm.photos = '';
     vm.searchForm.$setPristine();
   };
 
@@ -57,25 +55,52 @@ app.controller("MemoriesCtrl",['$http', '$q', function($http, $q){
         params: params,
         method: 'GET'
     }).then(function(response){
-          console.log("getFlickerData Success!");
           console.log(response);
           vm.photosTotal = response.data.photos.total;
           vm.loadingMsg = false;
           vm.photos = response.data.photos.photo;
           
     },function(response){
-         console.log("error retriving the getFlickerData");
+         console.log('error retriving the getFlickerData');
          console.log(response);
+         alert('Sorry, there was an error');
          vm.errorRequest = true;
     });
    };
 
    vm.validationBox = function(){
-    console.log("hi");
-      if(vm.searchTerm === ""){
+    console.log('hi');
+      if(vm.searchTerm === ''){
         vm.showValidation = true;
       } else {
        vm.showValidation = false;
      }
    };  
+
+   //Changing background color of Refresh button when the page is scrolled
+    function scrollRefresh(){
+        var scroll_start = 0;
+        var startChange = $('#results');
+        var offset = startChange.offset();
+        console.log("this is for results: " + offset.top); //always 0
+        $(document).scroll(function(){
+            scroll_start = $(this).scrollTop();
+            console.log(scroll_start); //adding up x4 units 
+            if(scroll_start > offset.top) {
+              $('.returnBtn').css({
+                'background-color' : '#11caca',
+                'color': '#fff'
+              });
+            }  else {
+              $('.returnBtn').css({
+                'background-color' : 'transparent',
+                'color': '#11caca'
+              });
+              $('.returnBtn').hover(function(){
+                $(this).toggleClass('.hoverRefresh');
+              });
+            }
+        });
+      }
+      scrollRefresh();
 }]);
