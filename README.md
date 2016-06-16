@@ -3,7 +3,7 @@ http://yolixtly.github.io/flicker-search/
 
 About : 
 
-- This App implements AngularJS and Flicker API. It is an image search engine with called <em><strong>Memories</strong></em> . 
+- This App implements AngularJS and Flicker API. It is an image search engine called <em><strong>Memories</strong></em> . 
 
 Bugs and Achievements: 
 
