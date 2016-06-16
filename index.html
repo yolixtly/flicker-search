@@ -14,12 +14,15 @@
   </head>
   <body  ng-app="imgApp" ng-controller="MemoriesCtrl as vm">
     <section ng-hide="vm.showResults" id="searchSection">
-      <p class="title"> Find me
-        <br><span class="logo-style">memories</span>
+      <p class="title">
+        Find me<br>
+        <span class="logo-style">memories</span>
         <form id="search-Form" name="vm.searchForm" ng-submit="vm.displayMemories()" novalidate>
           <label for="search-Box" class="about-style">about </label>
-          <input id="search-Box" name="searchbox" type="text" ng-model="vm.searchTerm" placeholder=" Pets..." required>
-          <button type="submit" name="searchButton" id="searchButton">Find</button>
+          <input id="search-Box" name="searchbox" type="text" ng-model="vm.searchTerm" placeholder=" Pets..." required />
+          <button type="submit" name="searchButton" id="searchButton">
+          Find
+          </button>
         </form>
       </p>
       <div id="validation" ng-messages="vm.searchForm.searchBox.$error" ng-if="vm.searchForm.$submitted">
@@ -30,24 +33,26 @@
             <span>AngularJS</span>
           </p>
         </div>
-        
       </div>
     </section>
     <section ng-hide="!vm.showResults" id="resultsSection">
       <button class="returnBtn" ng-click="vm.refreshSearch()">Refresh my Search</button>
-      <div class="message">We Found <span class="custom-message">20</span> memories of <span class="custom-message">{{ vm.searchTerm }}</span></div>
+      <div class="message">
+        We Found
+        <span class="custom-message">{{ vm.photosTotal }}</span>
+        memories of
+        <span class="custom-message">{{ vm.searchTerm }}</span>
+      </div>
+      <div class="message" ng-if="vm.errorRequest">
+        Upsss...there was an error, try again please!
+      </div>
       
       <div id="results" class="container">
-        <ul id="photo-list" class="row">
-          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-          <img src="images/test.jpeg" alt="test image" class="img-style col-xs-12 col-md-4">
-        </ul>
+        <div id="photo-list" class="row" ng-repeat="photo in vm.photos">
+          
+            <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{ photo.server }}/{{ photo.id }}_{{ photo.secret }}.jpg" alt="flcker image" class="img-style col-xs-12 col-md-4">
+         
+        </div>
       </div>
     </section>
     
