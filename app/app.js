@@ -17,11 +17,7 @@ app.controller("MemoriesCtrl",['$http', '$q', function($http, $q){
   vm.errorRequest = false; 
 
   //this is false, so Results Section will not be shown until form is valid
-  vm.showResults = false;
-
-  //this will save an array of urls to be iterate by ng-src in the UI
-  vm.urlArray = [];
-
+  vm.showResults = false; 
  
   vm.displayMemories = function(){
     if(vm.searchForm.$valid) {
@@ -81,29 +77,5 @@ app.controller("MemoriesCtrl",['$http', '$q', function($http, $q){
       } else {
        vm.showValidation = false;
      }
-   };
-
-   //creating $q promise to select all the Relevant data and place it as an image in the UI
-
-      // var createUrl = function(response){
-
-      //   return $q(function(resolve){
-
-      //     for(var i = 0; i < response.photos.photo.length; i++){
-
-      //           var farm  = response.data.photos.photo[i].farm;
-      //           var server = response.data.photos.photo[i].server;
-      //           var id = response.data.photos.photo[i].id;
-      //           var secret = response.data.photos.photo[i].secret;
-
-      //           // push each url to vm.urlArray
-      //          vm.urlArray[i] = 'https://farm' + farm + '.staticflickr.com/' + server + '/' + id + '_' + secret + '.jpg';
-
-      //         }
-      //   });
-      // };
-
-
-        
-  
+   };  
 }]);

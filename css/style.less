@@ -85,10 +85,15 @@ body {
 
 #resultsSection {
 	text-align: center;
+	nav {
+		position: fixed;
+	    width: 100%;
+	    z-index: 50;
+	}
  	.message {
 	      font-size: 2em;
 	      font-weight: bold;
-	      padding: 1em 0.5em;
+	      padding: 3em 0 0.5em;
 		  .custom-message {
 				color: #11caca;
 				text-shadow: 1px 1px #9E9E9E;
@@ -146,6 +151,8 @@ body {
 #resultsSection.ng-hide-remove-active {
 	opacity: 1;
 }
+
+
 /* Media Query Styles */
 
 @media (min-width: 901px) and (max-width: 1280px) {
@@ -166,7 +173,7 @@ body {
 	 .message {
 	      font-size: 2em;
 	      font-weight: bold;
-	      padding: 1em 0.5em;
+	      padding: 3em 0 0.5em !important;
 		  .custom-message {
 				color: #11caca;
 				text-shadow: 1px 1px #9E9E9E;
@@ -207,7 +214,7 @@ body {
 	/* Results styles */
 	.message {
 	      font-size: 1.5em !important;
-	      padding: 1em 0.5em !important;
+	      padding: 4em 0 0.5em !important;
 		}
 	.returnBtn {
 		width: 100% !important;

@@ -36,7 +36,9 @@
       </div>
     </section>
     <section ng-hide="!vm.showResults" id="resultsSection">
-      <button class="returnBtn" ng-click="vm.refreshSearch()">Refresh my Search</button>
+    <nav>
+    <button class="returnBtn" ng-click="vm.refreshSearch()">Refresh my Search</button></nav>
+      
            <div class="message" ng-if="vm.loadingMsg">
         We are loading your memories
       </div>
