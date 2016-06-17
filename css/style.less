@@ -1,38 +1,38 @@
 body {
-	font-family: 'Quicksand', sans-serif;
-	background-color: #f0f0f0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #f0f0f0;
 }
 
 /*Header Styles*/
 .title {
-	font-size: 7em !important;
-	z-index: 10;
+  font-size: 7em;
+  z-index: 10;
 }
 .logo-style {
-   	color: #11caca;
-   	font-weight: 700;
-   	z-index: 10;
+    color: #11caca;
+    font-weight: 700;
+    z-index: 10;
    }
  .about-style {
- 	font-size: 12em !important;
- 	margin: -10% 0 -5% 0;
- 	z-index: 10;
+  font-size: 12em;
+  margin: -10% 0 -5% 0;
+  z-index: 10;
  }
  #searchSection {
- 	margin: 5%;
-	position: absolute;
+  margin: 5%;
+  position: absolute;
     bottom: 0;
     left: 0;
  }
  form {
- 	display: inline-block;
- 	bottom:0;
- 	left: 0;
- 	z-index: 10;
+  display: inline-block;
+  bottom:0;
+  left: 0;
+  z-index: 10;
  }
 
 #search-Box {
-	outline: none;
+  outline: none;
     width: 45vw;
     color: #fff;
     font-size: 8em;
@@ -41,34 +41,34 @@ body {
     background: #11caca;
     transition: background 2s, border-left 2s;
     &:focus{
-    	background: #fff;
-    	color:#11caca;
-    	border-left: 0.2em solid;
+      background: #fff;
+      color:#11caca;
+      border-left: 0.2em solid;
     }
 }
 #searchButton {
-	border-radius: 50%;
-	width: 5em;
-	height: 5em;
-	border: none;
-	font-weight: bolder;
-	background-color: #11caca;
-	color: #fff;
-	outline: none;
-	&:hover {
-		text-shadow: 0 0 4px black;
-	}
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+  border: none;
+  font-weight: bolder;
+  background-color: #11caca;
+  color: #fff;
+  outline: none;
+  &:hover {
+    text-shadow: 0 0 4px black;
+  }
 }
 
 #error {
-	position: absolute;
+  position: absolute;
     top: 0;
     right: 0;
     z-index: 20;
     background-color: rgba(17, 202, 202, 0.52);
     padding: 2em;
-	width: 20em;
-	height: 20em;
+  width: 20em;
+  height: 20em;
     text-align: center;
     border-radius: 1em 2em 12em 0;
     p {
@@ -77,146 +77,146 @@ body {
     font-size: 3em;
     }
     span {
-    	color: hotpink;
+      color: hotpink;
     }
 }
 
 /*Results Section styles*/
 
 #resultsSection {
-	text-align: center;
-	nav {
-		position: fixed;
-	    width: 100%;
-	    z-index: 50;
-	}
- 	.message {
-	      font-size: 2em;
-	      font-weight: bold;
-	      padding: 3em 0 0.5em;
-		  .custom-message {
-				color: #11caca;
-				text-shadow: 1px 1px #9E9E9E;
-			}
-	}
-	#photo-list {
-		    display: inline-block; 
-		    padding: 1.5em;
-			margin: 1em;
-			background-color: rgba(17, 202, 202, 0.07);
-		.img-style {
-			border-radius: 1.5em;
-			width: 17em;
-			height: 17em;
-    		background-size: cover;
-			list-style: none;
-		}
-	}
-	.returnBtn {
-		width: 50%;
-		background: transparent;
-		border: none;
-		border-bottom: 1px solid #11caca;
-		color: #11caca;
-		cursor: pointer;
-		font-size: 2em;
-		padding: 0.5em 0;
-		transition: background 2s, color 2s;
-		outline: none;
-		
-		&:hover {
-			background: #11caca;
-			color: #fff;
-			outline: none;
-		}
-	}
+  text-align: center;
+  nav {
+    position: fixed;
+      width: 100%;
+      z-index: 50;
+  }
+  .message {
+        font-size: 2em;
+        font-weight: bold;
+        padding: 3em 0 0.5em;
+      .custom-message {
+        color: #11caca;
+        text-shadow: 1px 1px #9E9E9E;
+      }
+  }
+  #photo-list {
+      display: inline-block; 
+      padding: 1.5em;
+      margin: 1em;
+      background-color: rgba(17, 202, 202, 0.07);
+    .img-style {
+      border-radius: 1.5em;
+      width: 17em;
+      height: 17em;
+        background-size: cover;
+      list-style: none;
+    }
+  }
+  .returnBtn {
+    width: 50%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #11caca;
+    color: #11caca;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 0.5em 0;
+    transition: background 2s, color 2s;
+    outline: none;
+    
+    &:hover {
+      background: #11caca;
+      color: #fff;
+      outline: none;
+    }
+  }
 }
 .hoverRefresh {
-	background: #11caca;
-	color: #fff;
+  background: #11caca;
+  color: #fff;
 }
 /* Animations */
 
 #searchSection.ng-hide-add {
-	transition: 2s ease-out all;
+  transition: 2s ease-out all;
 }
 #searchSection.ng-hide {
-	opacity: 0;
+  opacity: 0;
 }
 #resultsSection.ng-hide-remove {
-	transition: 2s ease-in all;
-	opacity: 0;
+  transition: 2s ease-in all;
+  opacity: 0;
 }
 #resultsSection.ng-hide-remove-active {
-	opacity: 1;
+  opacity: 1;
 }
 
 
 /* Media Query Styles */
 
 @media (min-width: 901px) and (max-width: 1280px) {
-	#searchSection {
-		margin: 0 0 3% 4%;
-	}
-	.title {
-		font-size: 5.2em !important;	
-	}
-	.about-style {
-	 	font-size: 9em !important;
-	 	margin: -10% 0 -5% 0;
-	 }
-	 #search-Box {
-	 	width: 45vw;
-	    font-size: 6em;
-	 }
-	 .message {
-	      font-size: 2em;
-	      font-weight: bold;
-	      padding: 3em 0 0.5em !important;
-		  .custom-message {
-				color: #11caca;
-				text-shadow: 1px 1px #9E9E9E;
-			}
-		}
-	#error {
-		top: -5em !important;
-	}
-	.returnBtn {
-		width: 80%;
-	}
+  #searchSection {
+    margin: 0 0 3% 4%;
+  }
+  .title {
+    font-size: 5.2em; 
+  }
+  .about-style {
+    font-size: 9em;
+    margin: -10% 0 -5% 0;
+   }
+   #search-Box {
+    width: 45vw;
+      font-size: 6em;
+   }
+   .message {
+        font-size: 2em;
+        font-weight: bold;
+        padding: 3em 0 0.5em;
+      .custom-message {
+        color: #11caca;
+        text-shadow: 1px 1px #9E9E9E;
+      }
+    }
+  #error {
+    top: -5em;
+  }
+  #resultsSection .returnBtn {
+    width: 80%;
+  }
 }
 
 @media (min-width: 0px) and (max-width: 900px) {
-	#searchSection {
-		margin: 0;
-	}
-	.title {
-		font-size: 4em !important;	
-	}
-	.about-style {
-	 	font-size: 7em !important;
-	 	display: block;
-	 }
-	 #search-Box {
-	 	width: 75vw;
-	    font-size: 4em;
-	 }
+  #searchSection {
+    margin: 0;
+  }
+  .title {
+    font-size: 4em; 
+  }
+  .about-style {
+    font-size: 7em;
+    display: block;
+   }
+   #search-Box {
+    width: 75vw;
+      font-size: 4em;
+   }
 
-	#error {
-		top: 4em !important;
-		width: 15em;
-		height: 15em;
-		p {
-			font-size: 2em !important;
-		}
-	}
-	/* Results styles */
-	.message {
-	      font-size: 1.5em !important;
-	      padding: 4em 0 0.5em !important;
-		}
-	.returnBtn {
-		width: 100% !important;
-	}
+  #error {
+    top: 4em;
+    width: 15em;
+    height: 15em;
+    p {
+      font-size: 2em;
+    }
+  }
+  /* Results styles */
+  .message {
+        font-size: 1.5em;
+        padding: 4em 0 0.5em;
+    }
+  #resultsSection .returnBtn {
+    width: 100% !important;
+  }
 
 }
