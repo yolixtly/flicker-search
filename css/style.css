@@ -4,7 +4,7 @@ body {
 }
 /*Header Styles*/
 .title {
-  font-size: 7em !important;
+  font-size: 7em;
   z-index: 10;
 }
 .logo-style {
@@ -13,7 +13,7 @@ body {
   z-index: 10;
 }
 .about-style {
-  font-size: 12em !important;
+  font-size: 12em;
   margin: -10% 0 -5% 0;
   z-index: 10;
 }
@@ -149,10 +149,10 @@ form {
     margin: 0 0 3% 4%;
   }
   .title {
-    font-size: 5.2em !important;
+    font-size: 5.2em;
   }
   .about-style {
-    font-size: 9em !important;
+    font-size: 9em;
     margin: -10% 0 -5% 0;
   }
   #search-Box {
@@ -162,16 +162,16 @@ form {
   .message {
     font-size: 2em;
     font-weight: bold;
-    padding: 3em 0 0.5em !important;
+    padding: 3em 0 0.5em;
   }
   .message .custom-message {
     color: #11caca;
     text-shadow: 1px 1px #9E9E9E;
   }
   #error {
-    top: -5em !important;
+    top: -5em;
   }
-  .returnBtn {
+  #resultsSection .returnBtn {
     width: 80%;
   }
 }
@@ -180,10 +180,10 @@ form {
     margin: 0;
   }
   .title {
-    font-size: 4em !important;
+    font-size: 4em;
   }
   .about-style {
-    font-size: 7em !important;
+    font-size: 7em;
     display: block;
   }
   #search-Box {
@@ -191,19 +191,19 @@ form {
     font-size: 4em;
   }
   #error {
-    top: 4em !important;
+    top: 4em;
     width: 15em;
     height: 15em;
   }
   #error p {
-    font-size: 2em !important;
+    font-size: 2em;
   }
   /* Results styles */
   .message {
-    font-size: 1.5em !important;
-    padding: 4em 0 0.5em !important;
+    font-size: 1.5em;
+    padding: 4em 0 0.5em;
   }
-  .returnBtn {
+  #resultsSection .returnBtn {
     width: 100% !important;
   }
 }
